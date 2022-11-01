@@ -1,14 +1,25 @@
-// //1
-let int = prompt('any nunmber')
-if (int % 2 ===0) {
-    alert('Чётное')
-} else {
-    alert('не чётное')
-}
+let name = "Alex"
+let money = 10000
+let account = 7777
 
-//2
-// let user = prompt('Как вас зовут?').toLowerCase().trim()
-// if(user[0] === 'b' && user.length % 2  === 0 ) {
-//     alert('Ваше имя ' + user + ' Количество букв: Чётноe')
-// }   else{
-//     alert('Ваше имя не с буквы "b"' + ' Количество букв: Нечётное') }
+
+let name2 = prompt('Как вас зовут')
+    if (name2 === name) {
+        let account2 = prompt('Номер счёта')
+    if (account2 == account) {
+        alert(`Вы успешно вошли
+Ваш баланс: ${money}$`)
+        let giveMoney = prompt('Сколько обналичить?')
+    if (giveMoney <= money) {
+        alert('Всё отлично')
+        alert(`Снято: ${giveMoney}$ 
+Осталось: ${money - giveMoney}$ `)            
+    } else {
+        alert('Недостаточно средств')
+        }
+    } else {
+        alert(' Такого аккаунта нету')
+    }
+    } else {
+        alert("Пользователь не найден, досвидули")
+    }
