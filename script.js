@@ -23,3 +23,32 @@ let name2 = prompt('Как вас зовут')
     } else {
         alert("Пользователь не найден, досвидули")
     }
+
+//2
+// let name = prompt('Как вас зовут?').toLowerCase() 
+//     if (name[0] === 'a') {
+//         let age = prompt('Сколько вам лет?')
+//     if(age >= 20 && age <= 40) {
+//         let money = prompt("Сколько у вас денег?")
+//     if(money >= 100) {
+//         let peoples = prompt('Сколько вас?')
+//     if(peoples <= 10) {
+//         alert(`Welcome!
+// Баланс: ${money}$
+// Количество людей в компании: ${peoples}`)
+//     } else {
+//     alert(`Вас ${peoples} человек
+// вместимость клуба: 10 человек 
+// выгоните ${peoples - 10} `)
+//     }
+//     } else {
+//         alert('У вас мало денег :(')
+//     }
+//     } else if(age <= 20) {
+//         alert("Вы слишком молоды")
+//     } else if(age >= 40) {
+//         alert("Вы слишком стары")
+//     }   
+//     } else {
+//         alert(name + " извините вас нету в списке ")
+//     }
