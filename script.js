@@ -32,7 +32,7 @@ console.log(odd);
 //3
 let students = ['Azamat', 'Naufal', 'Parviz', 'Amin', 'Samir', 'Daler', 'Kamron']
 let name = prompt('any name')
-if (name === students) {
-    students.splice(name, item)
-}
-alert(students)
+
+console.log(
+    alert(students.filter(name2 => name2 !== name))
+);
