@@ -85,3 +85,9 @@
  
     console.log(a);
     console.log(b);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+let names = ['Abbos', 'Valentina', 'Odilbek', 'Shaxzod', 'Xojik', 'Emil', 'Saidbek', 'Morgenshtern', 'Alisher', 'Daler']
+
+let maxName = names.reduce((a, b) => a.length > b.length ? a: b,);
+console.log(maxName);
