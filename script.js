@@ -1,38 +1,87 @@
-let cars = [4000, 27000, 16000, 10000, 11000, 17000, 50000, 70000, 60000, 35000, 300, 2000, 8000]
-let cheap = []
-
-
-cars.filter(price => {
-    if (price <= 35000 === true) {
-        cheap.push(price)
+// Отфильтровать задачи в переменные а и b
+    // Сохранить количество в ключе count
+    // Сохранить сами задачи в массиве-ключе arr
+    let arr = [
+        {
+            "userId": 1,
+            "id": 1,
+            "title": "delectus aut au`tem",
+            "completed": false
+        },
+        {
+            "userId": 1,
+            "id": 2,
+            "title": "quis ut nam facilis et officia qui",
+            "completed": false
+        },
+        {
+            "userId": 1,
+            "id": 3,
+            "title": "fugiat veniam minus",
+            "completed": false
+        },
+        {
+            "userId": 1,
+            "id": 4,
+            "title": "et porro tempora",
+            "completed": true 
+        },
+        {
+            "userId": 1,
+            "id": 5,
+            "title": "laboriosam mollitia et enim quasi adipisci quia provident illum",
+            "completed": false
+        },
+        {
+            "userId": 1,
+            "id": 6,
+            "title": "qui ullam ratione quibusdam voluptatem quia omnis",
+            "completed": false
+        },
+        {
+            "userId": 1,
+            "id": 7,
+            "title": "illo expedita consequatur quia in",
+            "completed": false
+        },
+        {
+            "userId": 1,
+            "id": 8,
+            "title": "quo adipisci enim quam ut ab",
+            "completed": true
+        },
+        {
+            "userId": 1,
+   
+            "id": 9,
+            "title": "molestiae perspiciatis ipsa",
+            "completed": false
+        },
+        {
+            "userId": 1,
+            "id": 10,
+            "title": "illo est ratione doloremque quia maiores aut",
+            "completed": true
+        },
+    ]
+    let a = {
+        count: 0,
+        arr: []
     }
-})
-console.log(cheap);
-
-//2
-let arr = [4, 1, 2, 5, 4, 46, 11, 9, 27, 8, 33, 0, 9]
-let even = []
-let odd = []
-
-
-arr.filter(num => {
-    if (num % 2 === 0 === true) {
-        even.push(num)
+   
+    let b = {
+        count: 0,
+        arr: []
     }
-})
-console.log(even);
-
-arr.filter(num => {
-    if (num % 2 === 1 === true) {
-        odd.push(num)
-    }
-})
-console.log(odd);
-
-//3
-let students = ['Azamat', 'Naufal', 'Parviz', 'Amin', 'Samir', 'Daler', 'Kamron']
-let name = prompt('any name')
-
-console.log(
-    alert(students.filter(name2 => name2 !== name))
-);
+    arr.filter(item => {
+        if(item.completed === false) {
+            b.arr.push(item.completed)
+        } else if(item.completed === true) {
+            a.arr.push(item.completed)
+        } 
+    })
+    a.count = a.arr.length
+    b.count = b.arr.length
+ 
+    console.log(a);
+    console.log(b);
