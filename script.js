@@ -1,40 +1,66 @@
-const user = {
-    name: 'Iskandar',
-    surname: 'Xasanov',
-    age: 22,
-    status: true,
-    visa: ['Canada', 'USA', 'South Korea'],
-    fullname: function() {
-        return this.name + ' ' + this.surname
-    }
+let products = [
+    {
+        name: 'milk',
+        type: 'milk',
+        price: 10000
+    },
+    {
+        name: 'apple',
+        type: 'fruit',
+        price: 6000
+    },
+    {
+        name: 'vodka',
+        type: 'alcohol',
+        price: 70000
+    },
+    {
+        name: 'tvorog',
+        type: 'milk',
+        price: 15000
+    },
+    {
+        name: 'banan',
+        type: 'fruit',
+        price: 25000
+    },
+    {
+        name: 'pivo',
+        type: 'alcohol',
+        price: 50000
+    },
+    {
+        name: 'cheese',
+        type: 'milk',
+        price: 40000
+    },
+    {
+        name: 'persik',
+        type: 'fruit',
+        price: 23000
+    },
+    {
+        name: 'mochito',
+        type: 'alcohol',
+        price: 120000
+    },
+]
+//1
+let obsh = 0
+for(let i of products) {
+    obsh += i.price 
+    
 }
+console.log(obsh);
+//3
+let max = products.reduce((a,b) => a.price > b.price ?a : b )
+let min = products.reduce((a,b) => b.price < b.price ?a : b )
 
-let passport =  {
-    serries: "AC",
-    number: 1231546444,
-    date: {
-        get: "2015",
-        to: "2025"
-    }
-}
-let ob =  Object.assign({}, user, passport);
-let keys = Object.keys(ob)
-let values = Object.values(ob)
-let arr =  keys.concat(values)
-console.log(ob, keys, values, arr);
-
-let type = {
-    bol: [arr.filter(e => typeof e === 'boolean') ],
-    number: [arr.filter(e => typeof e === 'number') ],
-    str: [arr.filter(e => typeof e === 'string') ],
-    object: [arr.filter(e => typeof e === 'object') ]
-}
-  console.log(type);
+console.log(max , min);
+// Найти общ сумму
+// Найти среднюю цену 
+// найти самый дорогой продукт
+// найти самый дешевый продукт
 
 
 
-// ТЗ
-// Соеденить два объекта в один 
-// получить все ключи в один массив и все значения тоже в один отдельный массив
-// соеденить два массива в один
-// отфильтровать массив по типам данных элементов
