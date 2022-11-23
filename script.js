@@ -46,9 +46,9 @@ let products = [
     },
 ]
 //1
-let obsh = 0
+let totalPrice = 0
 for(let i of products) {
-    obsh += i.price 
+    totalPrice += i.price 
     
 }
 console.log(obsh);
