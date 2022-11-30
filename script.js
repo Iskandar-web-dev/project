@@ -1,66 +1,150 @@
-let products = [
+let arr = [
     {
-        name: 'milk',
-        type: 'milk',
-        price: 10000
+      id: 1,
+      name: "AZIZs_KABLUK",
+      budget: 500000,
+      tax: 12,
+      expensesPerYear: [
+        {
+          for: "design",
+          total: 60000,
+        },
+        {
+          for: "material",
+          total: 70000,
+        },
+        {
+          for: "place",
+          total: 120000,
+        },
+      ],
     },
     {
-        name: 'apple',
-        type: 'fruit',
-        price: 6000
+      id: 2,
+      name: "KAMERON_CINEMA",
+      budget: 600000,
+      tax: 12,
+      expensesPerYear: [
+        {
+          for: "camera",
+          total: 90000,
+        },
+        {
+          for: "actors",
+          total: 140000,
+        },
+        {
+          for: "electricity",
+          total: 50000,
+        },
+      ],
     },
     {
-        name: 'vodka',
-        type: 'alcohol',
-        price: 70000
+      id: 3,
+      name: "ISKANDARs_ZOO",
+      budget: 450000,
+      tax: 12,
+      expensesPerYear: [
+        {
+          for: "animals",
+          total: 100000,
+        },
+        {
+          for: "cloune",
+          total: 15000,
+        },
+        {
+          for: "food",
+          total: 70000,
+        },
+      ],
     },
     {
-        name: 'tvorog',
-        type: 'milk',
-        price: 15000
+      id: 4,
+      name: "AMINs_SOOOO",
+      budget: 800000,
+      tax: 12,
+      expensesPerYear: [
+        {
+          for: "house",
+          total: 200000,
+        },
+        {
+          for: "cars",
+          total: 150000,
+        },
+        {
+          for: "family",
+          total: 300000,
+        },
+      ],
     },
     {
-        name: 'banan',
-        type: 'fruit',
-        price: 25000
+        id: 5,
+        name: 'WEPRO',
+        budget: 100000,
+        tax: 12,
+        expensesPerYear: [
+            {
+                for: 'computers',
+                total: 50000
+            },
+            {
+                for: 'light',
+                total: 30000
+            },
+            {
+                for: 'students',
+                total: 10000
+            },
+        ]
     },
-    {
-        name: 'pivo',
-        type: 'alcohol',
-        price: 50000
-    },
-    {
-        name: 'cheese',
-        type: 'milk',
-        price: 40000
-    },
-    {
-        name: 'persik',
-        type: 'fruit',
-        price: 23000
-    },
-    {
-        name: 'mochito',
-        type: 'alcohol',
-        price: 120000
-    },
-]
-//1
-let totalPrice = 0
-for(let i of products) {
-    totalPrice += i.price 
-    
-}
-console.log(obsh);
-//3
-let max = products.reduce((a,b) => a.price > b.price ?a : b )
-let min = products.reduce((a,b) => b.price < b.price ?a : b )
+  ];
+  for (let item of arr) {
+    item.expensesPerMonth = 0;
+    let budgetForMonth = item.budget / 12;
+    for (let itemTwo of item.expensesPerYear) {
+      item.expensesPerMonth += itemTwo.total / 12;
+    }
+    item.expensesPerMonth += (item.tax * budgetForMonth) / 100;
+    item.procent = (item.expensesPerMonth * 100) / budgetForMonth;
+  }
+  
+  let success = []
+let unsuccess = []
 
-console.log(max , min);
-// Найти общ сумму
-// Найти среднюю цену 
-// найти самый дорогой продукт
-// найти самый дешевый продукт
+for(let item of arr) { // цикл чтобы достать каждый айтем  
+    item.expensesPerMonth = 0 // создаем новый ключ
+    let budgetForMonth = item.budget / 12 // находим месячный юьбджет и сохраняем в переменную 
+    
+    for(let itemTwo of item.expensesPerYear) { // раскрываем расходы каждой компании (за год) 
+        item.expensesPerMonth += itemTwo.total / 12 // прибавляем каждый расход к общей сумме деленную на 12 
+    }
+    // ...............................
+    // найти сумму алог за месяц 
+    // прибавить его к расходам
+    // ...............................
+
+    item.percent = Math.round(item.expensesPerMonth * 100 / budgetForMonth) + "%" // создаем новй ключ процент 
+    // присваиваем к нему соотношение трат к месячному бьджету и округляем
+  
+    if(item.percent > "70%"){
+        success.push(item)
+    } else {
+      unsuccess.push(item)
+    }
+}
+
+
+
+console.table(arr)
+console.log(success);
+console.log(unsuccess);
+console.log(taxes);
+// 1. Если процент трат больше 70% то в unsuccess если меньше то success
+// 2. Найти того кто больше всех платит налог и того кто меньше всех платит
+// 3. Найти общую сумму всех налогов сол всех компаний Например каждая компания платит по 20 тысяч в итоге сумма 100 000 (если 5 компаний)
+
 
 
 
